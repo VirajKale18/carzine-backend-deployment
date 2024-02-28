@@ -20,6 +20,6 @@ console.log(`Server is running Succesfully on ${PORT} !`)
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
 
-const URL = process.env.MONGODB_URL || `mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority`
+const URL = process.env.MONGODB_URL || `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority`
 Connection(URL);
 })
