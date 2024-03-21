@@ -24,6 +24,6 @@ console.log(`Server is running Succesfully on ${PORT} !`)
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
-const URL =`mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority`
+const URL =`mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/test`
 Connection(URL);
 })
