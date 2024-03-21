@@ -7,7 +7,11 @@ import bodyParser from 'body-parser';
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors({
+        origin:[
+            "https://carzine.netlify.app"
+        ]
+}));
 app.use(bodyParser.json({extended :true}))
 app.use(bodyParser.urlencoded({extended : true}))
 app.use('/',Router);
@@ -20,6 +24,6 @@ console.log(`Server is running Succesfully on ${PORT} !`)
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
-const URL = process.env.MONGODB_URL || `mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority`
+const URL =`mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority`
 Connection(URL);
 })

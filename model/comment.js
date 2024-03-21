@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const CommentSchema = new mongoose.Schema({
+const CommentSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
