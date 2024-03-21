@@ -8,10 +8,9 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-        origin:[
-            "http://localhost:3001",
-            "https://carzine.netlify.app/"
-        ]
+    origin: 'https://carzine.netlify.app',
+    methods: 'GET, POST, PUT, DELETE', // Specify the allowed HTTP methods
+    allowedHeaders: 'Content-Type, Authorization', // Specify the allowed request headers
 }));
 app.use(bodyParser.json({extended :true}))
 app.use(bodyParser.urlencoded({extended : true}))
