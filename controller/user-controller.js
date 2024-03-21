@@ -46,6 +46,7 @@ export const loginUser = async (request, response) => {
             response.status(400).json({ msg: 'Password does not match' })
         }
     } catch (error) {
-       return response.status(500).json({ msg: 'error while login the user' })
+        console.error('Error while logging in user:', error); // Log the error message
+    return response.status(500).json({ msg: 'error while login the user' })
     }
 }
