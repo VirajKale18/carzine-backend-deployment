@@ -14,6 +14,10 @@ export const signupUser =async (req,res)=>{
 
       const newUser = await new User(user);
       await newUser.save();
+      const savedUser = User.findById(newUser._id);
+      if(!savedUser){
+        return res.status(500).json({msg:'Error in saving user in DB'})
+      }
       
       return res.status(200).json({msg:'SignUp Succesfull',newUser})
     } catch (error) {
