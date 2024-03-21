@@ -9,7 +9,8 @@ dotenv.config();
 
 app.use(cors({
         origin:[
-            "https://carzine.netlify.app"
+            "http://localhost:3001",
+            "https://carzine.netlify.app/"
         ]
 }));
 app.use(bodyParser.json({extended :true}))
