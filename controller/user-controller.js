@@ -26,7 +26,7 @@ export const signupUser =async (req,res)=>{
 }
 
 export const loginUser = async (request, response) => {
-    let user = await User.findOne({ username: request.body.username });
+    let user = await User.findOne({ username: request.body.username }).select('+password');;
     if (!user) {
         return response.status(400).json({ msg: 'Username does not match' });
     }
