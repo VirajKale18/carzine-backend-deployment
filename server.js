@@ -8,7 +8,9 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-    origin: 'https://carzine.netlify.app',
+    origin: ['https://carzine.netlify.app',
+              'https://carzine-backend-deployment.onrender.com',
+            ],
     methods: 'GET, POST, PUT, DELETE', // Specify the allowed HTTP methods
     allowedHeaders: 'Content-Type, Authorization', // Specify the allowed request headers
 }));
