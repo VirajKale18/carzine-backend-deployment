@@ -7,13 +7,16 @@ import bodyParser from 'body-parser';
 const app = express();
 dotenv.config();
 
-app.use(cors({
-    origin: ['https://carzine.netlify.app',
-              'https://carzine-backend-deployment.onrender.com',
-            ],
-    methods: 'GET, POST, PUT, DELETE', // Specify the allowed HTTP methods
-    allowedHeaders: 'Content-Type, Authorization', // Specify the allowed request headers
-}));
+app.use(cors());
+// app.use(cors({
+//     origin: ['http://localhost:3000/',
+//             'http://localhost:8000/',
+//       'https://carzine.netlify.app',
+//               'https://carzine-backend-deployment.onrender.com',
+//             ],
+//     methods: 'GET, POST, PUT, DELETE', // Specify the allowed HTTP methods
+//     allowedHeaders: 'Content-Type, Authorization', // Specify the allowed request headers
+// }));
 app.use(bodyParser.json({extended :true}))
 app.use(bodyParser.urlencoded({extended : true}))
 app.use('/',Router);
@@ -26,7 +29,7 @@ console.log(`Server is running Succesfully on ${PORT} !`)
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
-//const URL =`mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0`;
-const URL = `mongodb+srv://vnkthebeast:RqPKLAd6EBGj4Ihq@mumbaicluster.25j0bri.mongodb.net/?retryWrites=true&w=majority&appName=MumbaiCluster`;
+const URL =`mongodb+srv://${username}:${password}@cluster0.thyv4tm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+//const URL = `mongodb+srv://vnkthebeast:RqPKLAd6EBGj4Ihq@mumbaicluster.25j0bri.mongodb.net/?retryWrites=true&w=majority&appName=MumbaiCluster`;
 Connection(URL);
 })
